@@ -1,0 +1,195 @@
+<svg viewBox="0 0 1200 1000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Entity: User -->
+  <rect x="50" y="50" width="200" height="180" fill="#f8f9fa" stroke="#000" stroke-width="2" rx="5" />
+  <text x="150" y="80" text-anchor="middle" font-weight="bold" font-size="18">User</text>
+  <line x1="50" y1="90" x2="250" y2="90" stroke="#000" stroke-width="2" />
+  <text x="60" y="110" font-size="14">PK: user_id</text>
+  <text x="60" y="130" font-size="14">name</text>
+  <text x="60" y="150" font-size="14">email</text>
+  <text x="60" y="170" font-size="14">phone</text>
+  <text x="60" y="190" font-size="14">password</text>
+  <text x="60" y="210" font-size="14">role (guest/tenant/admin)</text>
+
+  <!-- Entity: Property -->
+  <rect x="500" y="50" width="200" height="160" fill="#f8f9fa" stroke="#000" stroke-width="2" rx="5" />
+  <text x="600" y="80" text-anchor="middle" font-weight="bold" font-size="18">Property</text>
+  <line x1="500" y1="90" x2="700" y2="90" stroke="#000" stroke-width="2" />
+  <text x="510" y="110" font-size="14">PK: property_id</text>
+  <text x="510" y="130" font-size="14">name</text>
+  <text x="510" y="150" font-size="14">address</text>
+  <text x="510" y="170" font-size="14">description</text>
+  <text x="510" y="190" font-size="14">FK: admin_id</text>
+
+  <!-- Entity: Room -->
+  <rect x="900" y="50" width="200" height="200" fill="#f8f9fa" stroke="#000" stroke-width="2" rx="5" />
+  <text x="1000" y="80" text-anchor="middle" font-weight="bold" font-size="18">Room</text>
+  <line x1="900" y1="90" x2="1100" y2="90" stroke="#000" stroke-width="2" />
+  <text x="910" y="110" font-size="14">PK: room_id</text>
+  <text x="910" y="130" font-size="14">room_number</text>
+  <text x="910" y="150" font-size="14">floor</text>
+  <text x="910" y="170" font-size="14">occupancy</text>
+  <text x="910" y="190" font-size="14">rent</text>
+  <text x="910" y="210" font-size="14">status (available/booked)</text>
+  <text x="910" y="230" font-size="14">facilities</text>
+  <text x="910" y="250" font-size="14">FK: property_id</text>
+
+  <!-- Entity: Booking -->
+  <rect x="500" y="300" width="200" height="180" fill="#f8f9fa" stroke="#000" stroke-width="2" rx="5" />
+  <text x="600" y="330" text-anchor="middle" font-weight="bold" font-size="18">Booking</text>
+  <line x1="500" y1="340" x2="700" y2="340" stroke="#000" stroke-width="2" />
+  <text x="510" y="360" font-size="14">PK: booking_id</text>
+  <text x="510" y="380" font-size="14">booking_date</text>
+  <text x="510" y="400" font-size="14">check_in_date</text>
+  <text x="510" y="420" font-size="14">status</text>
+  <text x="510" y="440" font-size="14">FK: user_id</text>
+  <text x="510" y="460" font-size="14">FK: room_id</text>
+
+  <!-- Entity: Payment -->
+  <rect x="200" y="300" width="200" height="180" fill="#f8f9fa" stroke="#000" stroke-width="2" rx="5" />
+  <text x="300" y="330" text-anchor="middle" font-weight="bold" font-size="18">Payment</text>
+  <line x1="200" y1="340" x2="400" y2="340" stroke="#000" stroke-width="2" />
+  <text x="210" y="360" font-size="14">PK: payment_id</text>
+  <text x="210" y="380" font-size="14">amount</text>
+  <text x="210" y="400" font-size="14">payment_date</text>
+  <text x="210" y="420" font-size="14">payment_type</text>
+  <text x="210" y="440" font-size="14">month_year</text>
+  <text x="210" y="460" font-size="14">FK: booking_id</text>
+
+  <!-- Entity: Complaint -->
+  <rect x="50" y="550" width="200" height="180" fill="#f8f9fa" stroke="#000" stroke-width="2" rx="5" />
+  <text x="150" y="580" text-anchor="middle" font-weight="bold" font-size="18">Complaint</text>
+  <line x1="50" y1="590" x2="250" y2="590" stroke="#000" stroke-width="2" />
+  <text x="60" y="610" font-size="14">PK: complaint_id</text>
+  <text x="60" y="630" font-size="14">title</text>
+  <text x="60" y="650" font-size="14">description</text>
+  <text x="60" y="670" font-size="14">status</text>
+  <text x="60" y="690" font-size="14">created_date</text>
+  <text x="60" y="710" font-size="14">FK: user_id</text>
+
+  <!-- Entity: ComplaintAction -->
+  <rect x="350" y="550" width="200" height="160" fill="#f8f9fa" stroke="#000" stroke-width="2" rx="5" />
+  <text x="450" y="580" text-anchor="middle" font-weight="bold" font-size="18">ComplaintAction</text>
+  <line x1="350" y1="590" x2="550" y2="590" stroke="#000" stroke-width="2" />
+  <text x="360" y="610" font-size="14">PK: action_id</text>
+  <text x="360" y="630" font-size="14">action_description</text>
+  <text x="360" y="650" font-size="14">action_date</text>
+  <text x="360" y="670" font-size="14">FK: complaint_id</text>
+  <text x="360" y="690" font-size="14">FK: admin_id</text>
+
+  <!-- Entity: Rule -->
+  <rect x="650" y="550" width="200" height="140" fill="#f8f9fa" stroke="#000" stroke-width="2" rx="5" />
+  <text x="750" y="580" text-anchor="middle" font-weight="bold" font-size="18">Rule</text>
+  <line x1="650" y1="590" x2="850" y2="590" stroke="#000" stroke-width="2" />
+  <text x="660" y="610" font-size="14">PK: rule_id</text>
+  <text x="660" y="630" font-size="14">title</text>
+  <text x="660" y="650" font-size="14">description</text>
+  <text x="660" y="670" font-size="14">FK: property_id</text>
+
+  <!-- Entity: PGExit -->
+  <rect x="900" y="300" width="200" height="160" fill="#f8f9fa" stroke="#000" stroke-width="2" rx="5" />
+  <text x="1000" y="330" text-anchor="middle" font-weight="bold" font-size="18">PGExit</text>
+  <line x1="900" y1="340" x2="1100" y2="340" stroke="#000" stroke-width="2" />
+  <text x="910" y="360" font-size="14">PK: exit_id</text>
+  <text x="910" y="380" font-size="14">notice_date</text>
+  <text x="910" y="400" font-size="14">planned_exit_date</text>
+  <text x="910" y="420" font-size="14">status</text>
+  <text x="910" y="440" font-size="14">FK: booking_id</text>
+
+  <!-- Entity: Notification -->
+  <rect x="900" y="550" width="200" height="140" fill="#f8f9fa" stroke="#000" stroke-width="2" rx="5" />
+  <text x="1000" y="580" text-anchor="middle" font-weight="bold" font-size="18">Notification</text>
+  <line x1="900" y1="590" x2="1100" y2="590" stroke="#000" stroke-width="2" />
+  <text x="910" y="610" font-size="14">PK: notification_id</text>
+  <text x="910" y="630" font-size="14">message</text>
+  <text x="910" y="650" font-size="14">created_date</text>
+  <text x="910" y="670" font-size="14">FK: user_id</text>
+
+  <!-- Entity: UserDocument -->
+  <rect x="200" y="750" width="200" height="140" fill="#f8f9fa" stroke="#000" stroke-width="2" rx="5" />
+  <text x="300" y="780" text-anchor="middle" font-weight="bold" font-size="18">UserDocument</text>
+  <line x1="200" y1="790" x2="400" y2="790" stroke="#000" stroke-width="2" />
+  <text x="210" y="810" font-size="14">PK: document_id</text>
+  <text x="210" y="830" font-size="14">document_type</text>
+  <text x="210" y="850" font-size="14">document_url</text>
+  <text x="210" y="870" font-size="14">FK: user_id</text>
+
+  <!-- Entity: MaintenanceRequest -->
+  <rect x="500" y="750" width="250" height="160" fill="#f8f9fa" stroke="#000" stroke-width="2" rx="5" />
+  <text x="625" y="780" text-anchor="middle" font-weight="bold" font-size="18">MaintenanceRequest</text>
+  <line x1="500" y1="790" x2="750" y2="790" stroke="#000" stroke-width="2" />
+  <text x="510" y="810" font-size="14">PK: request_id</text>
+  <text x="510" y="830" font-size="14">description</text>
+  <text x="510" y="850" font-size="14">status</text>
+  <text x="510" y="870" font-size="14">request_date</text>
+  <text x="510" y="890" font-size="14">FK: room_id</text>
+  <text x="510" y="910" font-size="14">FK: user_id</text>
+
+  <!-- Relationships -->
+  <!-- User to Booking -->
+  <line x1="175" y1="230" x2="500" y2="380" stroke="#000" stroke-width="1.5" stroke-dasharray="5,5" />
+  <polygon points="495,380 505,385 495,390" fill="#000" />
+  <text x="300" y="320" text-anchor="middle" font-size="14">makes</text>
+
+  <!-- Property to Room -->
+  <line x1="700" y1="120" x2="900" y2="120" stroke="#000" stroke-width="1.5" />
+  <polygon points="895,120 905,125 895,130" fill="#000" />
+  <text x="800" y="100" text-anchor="middle" font-size="14">has</text>
+  <text x="850" y="140" text-anchor="middle" font-size="14">1:N</text>
+
+  <!-- Room to Booking -->
+  <line x1="950" y1="250" x2="700" y2="350" stroke="#000" stroke-width="1.5" />
+  <polygon points="705,345 695,355 695,345" fill="#000" />
+  <text x="850" y="300" text-anchor="middle" font-size="14">is booked via</text>
+
+  <!-- Booking to Payment -->
+  <line x1="500" y1="400" x2="400" y2="400" stroke="#000" stroke-width="1.5" />
+  <polygon points="405,395 395,400 405,405" fill="#000" />
+  <text x="450" y="380" text-anchor="middle" font-size="14">has</text>
+  <text x="450" y="420" text-anchor="middle" font-size="14">1:N</text>
+
+  <!-- User to Complaint -->
+  <line x1="100" y1="230" x2="100" y2="550" stroke="#000" stroke-width="1.5" />
+  <polygon points="95,545 105,545 100,555" fill="#000" />
+  <text x="60" y="400" text-anchor="middle" font-size="14">raises</text>
+  <text x="140" y="400" text-anchor="middle" font-size="14">1:N</text>
+
+  <!-- Complaint to ComplaintAction -->
+  <line x1="250" y1="620" x2="350" y2="620" stroke="#000" stroke-width="1.5" />
+  <polygon points="345,615 355,620 345,625" fill="#000" />
+  <text x="300" y="600" text-anchor="middle" font-size="14">has</text>
+  <text x="300" y="640" text-anchor="middle" font-size="14">1:N</text>
+
+  <!-- Property to Rule -->
+  <line x1="600" y1="210" x2="700" y2="550" stroke="#000" stroke-width="1.5" />
+  <polygon points="695,545 705,555 705,545" fill="#000" />
+  <text x="620" y="400" text-anchor="middle" font-size="14">has</text>
+  <text x="640" y="430" text-anchor="middle" font-size="14">1:N</text>
+
+  <!-- Booking to PGExit -->
+  <line x1="700" y1="400" x2="900" y2="400" stroke="#000" stroke-width="1.5" />
+  <polygon points="895,395 905,400 895,405" fill="#000" />
+  <text x="800" y="380" text-anchor="middle" font-size="14">has</text>
+  <text x="800" y="420" text-anchor="middle" font-size="14">1:1</text>
+
+  <!-- User to Notification -->
+  <line x1="200" y1="170" x2="950" y2="550" stroke="#000" stroke-width="1.5" stroke-dasharray="5,5" />
+  <polygon points="945,545 955,555 955,545" fill="#000" />
+  <text x="600" y="280" text-anchor="middle" font-size="14">receives</text>
+
+  <!-- User to UserDocument -->
+  <line x1="150" y1="230" x2="250" y2="750" stroke="#000" stroke-width="1.5" />
+  <polygon points="245,745 255,755 255,745" fill="#000" />
+  <text x="180" y="500" text-anchor="middle" font-size="14">has</text>
+  <text x="200" y="530" text-anchor="middle" font-size="14">1:N</text>
+
+  <!-- Room to MaintenanceRequest -->
+  <line x1="950" y1="250" x2="650" y2="750" stroke="#000" stroke-width="1.5" stroke-dasharray="5,5" />
+  <polygon points="645,745 655,755 655,745" fill="#000" />
+  <text x="800" y="500" text-anchor="middle" font-size="14">has</text>
+  <text x="800" y="530" text-anchor="middle" font-size="14">1:N</text>
+
+  <!-- User to MaintenanceRequest -->
+  <line x1="150" y1="230" x2="550" y2="750" stroke="#000" stroke-width="1.5" stroke-dasharray="5,5" />
+  <polygon points="545,745 555,755 555,745" fill="#000" />
+  <text x="350" y="500" text-anchor="middle" font-size="14">submits</text>
+</svg>
