@@ -1,0 +1,18 @@
+-> COLOR THEME : 
+ 
+1. logo-color: #6E39A3;
+
+2. bg-color: #FAFAFA;
+
+3. text-color: #000;
+
+4. Color for secondary buttons like : filters
+  filter-btn-text: #3A0D5C;
+  filter-btn-bg: #FFFFFF;
+  filter-btn-border: #3A0D5C;
+
+5. Color for primary button like : submit, save
+  submit-btn-text: #FFFFFF;
+  submit-btn-bg: #6E39A3;
+
+6. Light version of purple : #E7D0F5
