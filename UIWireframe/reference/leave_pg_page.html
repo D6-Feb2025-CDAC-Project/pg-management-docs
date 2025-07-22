@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PG Management - Leave PG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #e8e8e8;
+            padding: 12px 20px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-profile, .btn-logout {
+            padding: 6px 12px;
+            border: 1px solid #999;
+            border-radius: 4px;
+            background-color: white;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .btn-logout {
+            background-color: #dc3545;
+            color: white;
+            border-color: #dc3545;
+        }
+
+        .main-content {
+            display: flex;
+            min-height: 500px;
+        }
+
+        .sidebar {
+            width: 180px;
+            background-color: #f8f9fa;
+            border-right: 1px solid #ccc;
+            padding: 0;
+        }
+
+        .menu-header {
+            background-color: #e8e8e8;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .menu-item {
+            display: block;
+            width: 100%;
+            padding: 12px 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-top: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .menu-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .menu-item.active {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .page-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .form-section {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background-color: #f8f9fa;
+            padding: 10px 15px;
+            border-bottom: 1px solid #ccc;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-content {
+            padding: 20px;
+        }
+
+        .form-row {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .form-label {
+            width: 150px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-textarea {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-select {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: white;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            padding: 12px;
+            margin-bottom: 20px;
+            color: #856404;
+            font-size: 13px;
+        }
+
+        .info-box {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 4px;
+            padding: 12px;
+            margin-bottom: 20px;
+            color: #0c5460;
+            font-size: 13px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+        }
+
+        .btn-submit {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+
+        .btn-submit:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+
+        .recent-section {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PG Management</h1>
+            <div class="header-buttons">
+                <button class="btn-profile">Profile</button>
+                <button class="btn-logout">Logout</button>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="menu-header">Menu</div>
+                <a href="#" class="menu-item">Dashboard</a>
+                <a href="#" class="menu-item">Pay Rent</a>
+                <a href="#" class="menu-item">Raise Complaint</a>
+                <a href="#" class="menu-item">My Complaints</a>
+                <a href="#" class="menu-item">Request Maintenance</a>
+                <a href="#" class="menu-item active">Leave PG</a>
+            </div>
+            
+            <div class="content">
+                <h2 class="page-title">Leave PG Notice</h2>
+                
+                <div class="form-section">
+                    <div class="section-header">Current Tenancy Details</div>
+                    <div class="form-content">
+                        <div class="form-row">
+                            <span class="form-label">Room Number:</span>
+                            <span style="flex: 1; color: #666;">Room 205 (Double Room)</span>
+                        </div>
+                        <div class="form-row">
+                            <span class="form-label">Current Month:</span>
+                            <span style="flex: 1; color: #666;">May 2025</span>
+                        </div>
+                        <div class="form-row">
+                            <span class="form-label">Next Due Date:</span>
+                            <span style="flex: 1; color: #666;">05/06/2025</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="warning-box">
+                    <strong>Notice Period:</strong> As per PG policy, minimum 30 days notice is required before vacating. Early termination may result in forfeiture of security deposit.
+                </div>
+                
+                <div class="form-section">
+                    <div class="section-header">Notice Details</div>
+                    <div class="form-content">
+                        <div class="form-row">
+                            <label class="form-label">Intended Move-out Date:</label>
+                            <input type="date" class="form-input" id="moveoutDate" min="" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label class="form-label">Reason for Leaving:</label>
+                            <select class="form-select" id="reason" required>
+                                <option value="">Select reason</option>
+                                <option value="job_relocation">Job Relocation</option>
+                                <option value="higher_studies">Higher Studies</option>
+                                <option value="family_reasons">Family Reasons</option>
+                                <option value="better_accommodation">Found Better Accommodation</option>
+                                <option value="financial_constraints">Financial Constraints</option>
+                                <option value="facility_issues">Issues with Facilities</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label class="form-label">Additional Details:</label>
+                            <textarea class="form-textarea" id="details" placeholder="Please provide any additional information about your reason for leaving or special circumstances..."></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label class="form-label">Contact Number:</label>
+                            <input type="tel" class="form-input" id="contactNumber" placeholder="Enter contact number for communication" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label class="form-label">Email Address:</label>
+                            <input type="email" class="form-input" id="emailAddress" placeholder="Enter email address" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <strong>What happens next:</strong><br>
+                    • Your notice will be reviewed by the PG management<br>
+                    • Security deposit refund process will be initiated after room inspection<br>
+                    • Final settlement will be processed within 7-10 working days after vacating<br>
+                    • You will receive confirmation and further instructions via email/SMS
+                </div>
+                
+                <div class="form-section">
+                    <div class="section-header">Confirmation & Acknowledgment</div>
+                    <div class="form-content">
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="confirm1" required>
+                                <label for="confirm1">I confirm that I want to vacate the PG accommodation on the specified date</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="confirm2" required>
+                                <label for="confirm2">I understand the notice period requirements and potential deposit implications</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="confirm3" required>
+                                <label for="confirm3">I agree to keep the room in good condition and follow checkout procedures</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="confirm4">
+                                <label for="confirm4">I would like assistance in finding a replacement tenant (if applicable)</label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn-submit" onclick="submitNotice()">Submit Leave Notice</button>
+                    </div>
+                </div>
+                
+                <div class="form-section recent-section">
+                    <div class="section-header">Recent Leave Requests</div>
+                    <div class="form-content">
+                        <p style="color: #666; font-style: italic; text-align: center; padding: 20px;">No previous leave requests found.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Set minimum date to today
+        document.getElementById('moveoutDate').min = new Date().toISOString().split('T')[0];
+        
+        // Auto-populate today's date + 30 days as default
+        const defaultDate = new Date();
+        defaultDate.setDate(defaultDate.getDate() + 30);
+        document.getElementById('moveoutDate').value = defaultDate.toISOString().split('T')[0];
+        
+        function submitNotice() {
+            const moveoutDate = document.getElementById('moveoutDate').value;
+            const reason = document.getElementById('reason').value;
+            const contactNumber = document.getElementById('contactNumber').value;
+            const emailAddress = document.getElementById('emailAddress').value;
+            const confirm1 = document.getElementById('confirm1').checked;
+            const confirm2 = document.getElementById('confirm2').checked;
+            const confirm3 = document.getElementById('confirm3').checked;
+            
+            // Basic validation
+            if (!moveoutDate || !reason || !contactNumber || !emailAddress || !confirm1 || !confirm2 || !confirm3) {
+                alert('Please fill all required fields and accept the mandatory confirmations.');
+                return;
+            }
+            
+            // Check if move-out date is at least 30 days from today
+            const today = new Date();
+            const selectedDate = new Date(moveoutDate);
+            const diffTime = selectedDate - today;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            
+            if (diffDays < 30) {
+                if (!confirm('The selected move-out date is less than 30 days from today. This may affect your security deposit. Do you want to proceed?')) {
+                    return;
+                }
+            }
+            
+            // Simulate form submission
+            document.querySelector('.btn-submit').disabled = true;
+            document.querySelector('.btn-submit').textContent = 'Submitting...';
+            
+            setTimeout(() => {
+                alert('Leave notice submitted successfully! You will receive a confirmation email shortly. Reference ID: LN' + Date.now().toString().substr(-6));
+                
+                // Reset form
+                document.getElementById('moveoutDate').value = defaultDate.toISOString().split('T')[0];
+                document.getElementById('reason').value = '';
+                document.getElementById('details').value = '';
+                document.getElementById('contactNumber').value = '';
+                document.getElementById('emailAddress').value = '';
+                document.getElementById('confirm1').checked = false;
+                document.getElementById('confirm2').checked = false;
+                document.getElementById('confirm3').checked = false;
+                document.getElementById('confirm4').checked = false;
+                
+                document.querySelector('.btn-submit').disabled = false;
+                document.querySelector('.btn-submit').textContent = 'Submit Leave Notice';
+            }, 2000);
+        }
+        
+        // Show/hide other reason details
+        document.getElementById('reason').addEventListener('change', function() {
+            const detailsTextarea = document.getElementById('details');
+            if (this.value === 'other') {
+                detailsTextarea.placeholder = 'Please specify your reason for leaving...';
+                detailsTextarea.required = true;
+            } else {
+                detailsTextarea.placeholder = 'Please provide any additional information about your reason for leaving or special circumstances...';
+                detailsTextarea.required = false;
+            }
+        });
+    </script>
+</body>
+</html>

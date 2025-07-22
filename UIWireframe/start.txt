@@ -1,0 +1,31 @@
+Hi everyone, I’m Nivedita, and on behalf of my team, I’m excited to introduce our project – EasyPG.
+
+EasyPG is a platform we’re building to manage Paying Guest (PG) accommodations — designed with features that 
+cater to both tenants and PG owners.
+
+In this presentation, we’ll walk you through:
+    the motivation behind the project,
+    the challenges we set out to solve,
+    and how we approached the design and development, using UML diagrams, ER diagrams, and wireframes.
+
+So why did we decide to build EasyPG?
+
+When we moved to Pune for the PG-DAC course, the first big challenge was finding a good PG — especially for 
+outstation students who had no way to explore or book rooms online. Most PGs had no formal online presence.
+
+Even after moving in, we faced issues like:
+    Rent payments being tracked through informal chats on WhatsApp,
+    Complaints about services not having a proper process or follow-up,
+    And overall poor coordination between tenants and owners.
+
+We realized the problem wasn't just ours — PG owners were also maintaining records manually in Excel, 
+without any standard format. Managing tenant queries, bookings, and payments was chaotic.
+
+This gap led us to the idea of EasyPG — a full-stack web application that streamlines PG management:
+    Tenants can register, book rooms, track rent, raise complaints,
+    Owners can manage rooms, bookings, complaints, and tenant records — all in one place.
+    We designed the system with clearly defined user roles, and used UML to map out their interactions and 
+responsibilities.
+
+With that, I’ll now hand it over to Prajkta, who will take you through the UML and explain how each role fits 
+into the system.

@@ -1,0 +1,9 @@
+PG Management System - Easy PG
+
+Full stack application 
+    - for aspiring tenants to look for rooms in a given PG, browse rooms, book room, 
+    - for tenets to track payments, raise complaints, 
+    - for PG owner and authorized user to view complaints of the tenants, take action on complaints raised by tenants, view dashboard of showing the summary statistics of PG occupancy, rent collection, complaints tracking
+
+Development stack
+    - Frontend: React, Redux, Bootstrap, Syncfusion, recharts (if required)

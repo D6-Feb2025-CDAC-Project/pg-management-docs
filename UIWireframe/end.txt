@@ -1,0 +1,28 @@
+Now I’ll walk you through the key features available to the PG owner or admin in EasyPG. 
+These are designed to bring structure and control to day-to-day PG operations
+
+1. Here is the Admin dashboard — the control center for PG owners.
+The admin dashboard gives a snapshot of the PG’s overall status — including total tenants, 
+pending bookings, and unresolved complaints. It acts as the entry point for all important 
+admin actions, offering clarity at a glance.
+
+2. Manage Rooms/Properties - This section lets the admin add new rooms, update room details 
+like occupancy and rent, or temporarily hide rooms that are under maintenance. It replaces manual 
+record-keeping with a structured, easy-to-update system
+
+3. Tenant Management - Here, the admin can see all active tenants, their profile details, 
+rent status, and initiate actions — like sending reminders or processing exits. 
+This helps automate rent tracking and reduces reliance on scattered messages or Excel sheets.
+
+4. Manage Bookings - This panel displays incoming room bookings with relevant tenant info. 
+The admin can confirm or decline requests based on availability — helping them manage occupancy 
+more systematically.
+
+We’ve also planned modules for managing complaints, updating PG rules, and sending rent 
+notifications — these aren’t in the current UI demo but are part of our overall design scope
+
+With these features, EasyPG aims to give PG owners a centralized, efficient way to manage their 
+property and tenants — replacing manual chaos with clarity
+
+That wraps up our presentation for EasyPG. We’re just getting started with development, 
+and we’re excited to bring this idea to life in the coming weeks. Thank you.
